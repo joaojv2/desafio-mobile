@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit
 
 object RetrofitBuilder {
 
-    private const val TIME_OUT: Long = 10
+    private const val TIME_OUT: Long = 2
     private const val BASE_URL: String = "https://desafio.mobfiq.com.br/"
 
     fun buildRetrofit(): Retrofit {
@@ -22,9 +22,9 @@ object RetrofitBuilder {
 
     private fun buildClient(): OkHttpClient {
         return OkHttpClient.Builder()
-            .readTimeout(TIME_OUT, TimeUnit.SECONDS)
-            .writeTimeout(TIME_OUT, TimeUnit.SECONDS)
-            .connectTimeout(TIME_OUT, TimeUnit.SECONDS)
+            .readTimeout(TIME_OUT, TimeUnit.MINUTES)
+            .writeTimeout(TIME_OUT, TimeUnit.MINUTES)
+            .connectTimeout(TIME_OUT, TimeUnit.MINUTES)
             .build()
     }
 }

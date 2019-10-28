@@ -17,6 +17,6 @@ class CategoryRepository : ICategoryRepository, KoinComponent {
     ) {
         categoryRemoteDataSource.categoryTree()
             .subscribeOn(Schedulers.computation())
-            .subscribe( {onSuccess(it)}, {onError(it)})
+            .subscribe( {onSuccess(it.categories)}, {onError(it)})
     }
 }

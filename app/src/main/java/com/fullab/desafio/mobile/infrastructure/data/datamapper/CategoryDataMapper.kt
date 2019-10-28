@@ -10,7 +10,7 @@ import org.koin.core.inject
 
 class CategoryDataMapper : IDataMapper<Category, CategoryDTO>, KoinComponent {
 
-    private val subCategoryDataMapper: IDataMapper<SubCategory, SubCategoryDTO> by inject()
+    private val subCategoryDataMapper: SubCategoryDataMapper by inject()
 
     override fun map(input: Category): CategoryDTO {
         return CategoryDTO(
