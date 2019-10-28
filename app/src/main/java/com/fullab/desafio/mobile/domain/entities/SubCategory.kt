@@ -7,7 +7,7 @@ data class SubCategory(
     @SerializedName(NAME) val name: String
 ) {
 
-    internal companion object {
+    private companion object {
         private const val ID: String = "Id"
         private const val NAME: String = "Name"
     }
