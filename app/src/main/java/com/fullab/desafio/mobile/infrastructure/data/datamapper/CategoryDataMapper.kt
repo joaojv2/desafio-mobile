@@ -6,9 +6,9 @@ import com.fullab.desafio.mobile.infrastructure.data.datamapper.interfaces.IData
 import org.koin.core.KoinComponent
 import org.koin.core.inject
 
-class CategoryIDataMapper : IDataMapper<Category, CategoryDTO>, KoinComponent {
+class CategoryDataMapper : IDataMapper<Category, CategoryDTO>, KoinComponent {
 
-    private val subCategoryDataMapper: SubCategoryIDataMapper by inject()
+    private val subCategoryDataMapper: SubCategoryDataMapper by inject()
 
     override fun map(input: Category): CategoryDTO {
         return CategoryDTO(input.id, input.name, input.subCategories.map { subCategoryDataMapper.map(it) })
